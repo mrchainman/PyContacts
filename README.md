@@ -6,3 +6,6 @@ In the resulting menu the contact can be choosen and it is possible to copy the 
 
 contacts_add.py expects an email as argument, but will prompt for it if none is given.
 The default name of the vcf file will be Name.vcf, where Name is the contactname
+
+# TODO
+* Cleanup regular expression, to allow functioning for different vcf features (for instance there is a problem when the vcf has the phonenumber type given)
