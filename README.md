@@ -9,3 +9,4 @@ The default name of the vcf file will be Name.vcf, where Name is the contactname
 
 # TODO
 * Cleanup regular expression, to allow functioning for different vcf features (for instance there is a problem when the vcf has the phonenumber type given)
+* Change CTRL+g to enter
