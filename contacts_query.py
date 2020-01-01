@@ -21,9 +21,11 @@ def contact_update():
         for entry in folder:
             with open(entry.path, "r")as f:
                 line = f.readlines()
+                # Set variables to prevent error.
                 name = 'None'
                 number = 'None'
                 email = 'None'
+                # If the variables are set, give them the new value.
                 for i in set(line):
                     if i[0:2] == 'FN':
                         name = i.replace('FN', '').replace(':', '')\
@@ -44,10 +46,11 @@ def contact_update():
 
 
 def main():
+    # Setup the curses window
+    # TODO: Make it prettier
     stdscr = curses.initscr()
     curses.noecho()
     max_y, max_x = stdscr.getmaxyx()
-    # stdscr.addstr(10, 50, "Please Enter Contact Name:")
     textfield = curses.newwin(5, 5, int(max_y/2 + 5), int(max_x/2 - 10))
     textbox = curses.textpad.Textbox(textfield)
     textbox.edit()
@@ -56,11 +59,11 @@ def main():
     return name
 
 # Search for the given name, including names containg it and greate a list
-
-
 def search_name(name, d):
+    # Check if name was passed as an argument
     try:
         name = sys.argv[1]
+    # Else set it to the name variable
     except:
         name = name
         name = name.replace(' ', '').replace('\n', '')
@@ -74,8 +77,6 @@ def search_name(name, d):
     return chosen
 
 # show the relevent data and copy the selected entry to clipboard
-
-
 def show_data(key, d):
     stdscr = curses.initscr()
     stdscr.clear()
@@ -91,6 +92,7 @@ def show_data(key, d):
 # Main Loop
 
 
+# Start main
 if (__name__ == "__main__"):
     dictionary = contact_update()
     name = main()
