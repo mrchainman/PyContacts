@@ -1,3 +1,6 @@
+# Depreciated!
+I will not further develop this project, as I now found Khard, which does all I need. If anyone wants to develop this project further just take it and do it, have fun :) .
+
 # Contacts
 A short script for adding and querying contacts in a folder in vcf format.
 
